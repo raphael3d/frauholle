@@ -1,0 +1,97 @@
+
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAA1WcwxaMdvIpFRZlbTRKLoRS2ABl6ywPWBW_KqIOWj87bDKLllBRnWQ2g7Et04NfJroCc1Uz1Yd2w3g" type="text/javascript"></script>
+	
+	 <script type="text/javascript">
+   		//<![CDATA[
+
+   		function load() {
+   		  if (GBrowserIsCompatible()) {
+
+   			  function createMarker(point,html) {
+   				var marker = new GMarker(point);
+   				GEvent.addListener(marker, "click", function() {
+   				  marker.openInfoWindowHtml(html);
+   				});
+   				return marker;
+   			  }
+
+   			  function createMarker(point,html) {
+   				var marker = new GMarker(point);
+   				GEvent.addListener(marker, "click", function() {
+   				  marker.openInfoWindowHtml(html);
+   				});
+   				return marker;
+   			  }
+
+   			  var map = new GMap2(document.getElementById("map"));
+   			  map.addControl(new GSmallMapControl());
+   			  map.addControl(new GMapTypeControl());
+   			  map.setCenter(new GLatLng(48.2351179, 13.8271118),16);
+
+   			  var point = new GLatLng(48.235118, 13.827112);
+   			  var marker = createMarker(point,'<div style="width:200px"><b>Frau Holle</b><br></br>Mühlbachgasse 3<br></br>4710 Grieskirchen, Austria <br></br>Tel. 07248 61155</div>');
+   			  map.addOverlay(marker);
+
+   			}
+
+   			// display a warning if the browser was not compatible
+   			else {
+   			  alert("Sorry, the Google Maps API is not compatible with this browser");
+   			}
+   		}
+
+   		//]]>
+   		</script>
+  
+      <body onload="load()" onunload="GUnload()">
+
+      	<div id="page-wrap">
+
+      		<div id="map"></div>
+
+
+
+      	</div>
+  
+	<section id="contact">
+  	
+  		<h1 class="contact">Schreib Sie uns eine Nachricht</h1>
+  		
+  		
+  		<form id="contactform">
+  		<%= stylesheet_link_tag 'contact', :media => 'screen' %>
+      
+  	
+         <p><%= f.label :email, "Name, Email (zum Antworten):" %></p>
+          <%= f.text_field :name, :placeholder => "beispiel@domain.at" %>
+
+
+            <p><%= f.label :email, "Deine Nachricht:" %></p>
+            <%= f.text_area :email, :rows => 68, :cols => 50, :placeholder => "∞" %>
+  
+  
+	<input name="submit" type="submit" id="submit" tabindex="5" value="Nachricht senden" /> 
+  
+  	</form> 
+
+	
+	</section>
+
+<% end %>
+
+
+
+

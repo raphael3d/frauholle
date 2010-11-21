@@ -1,0 +1,23 @@
+<footer>
+
+  <div class="round">
+  
+  
+  <nav class="round">
+  
+    <ul>
+    <li><p>Peham Naturprodukte KEG</p></li>
+
+       <% if signed_in? %>
+     <li><%= link_to "Ausloggen", signout_path, :method => :delete %></li>
+     <li><%= link_to "Produkte bearbeiten", '/products' %></li>
+     <li><%= link_to "Aktuelles bearbeiten", '/listes' %></li>
+     
+       <% else %>
+       <li><a href="/signin"><img src="/images/coffee.png" /> </a></li>
+       <% end %>
+      </ul>
+      </nav>
+      
+  </div>
+</footer>

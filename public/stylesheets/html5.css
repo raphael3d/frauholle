@@ -1,0 +1,44 @@
+/* HTML5 tags */  
+header, section, footer,  
+aside, nav, article, figure {  
+    display: block;  
+
+} 
+.leftproduct {
+	margin-top: 50px;
+	float: left;
+	width: 400px;
+	padding: 10px;
+}
+.rightproduct {
+	margin-top: 50px;
+	padding: 10px;
+	float: right;
+	width: 510px;
+}
+.leftproduct p {
+	font-family: Keffeesatz, Arial; 
+	color: #4b4b4b; font-size: 14px;
+}
+.leftproduct h2 {
+	font-size: 17pt;
+	padding: 5px;
+	border-bottom: 1px solid gray;
+	text-align: center;
+
+	font-family: Keffeesatz, Arial;
+}
+
+.aboutimg img{
+	float:left;
+	border:15px solid #fff;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-right:25px;
+	background-color: white;
+}
+.aboutimg {
+margin: 10px 0 10px 0;
+float: left;
+
+}

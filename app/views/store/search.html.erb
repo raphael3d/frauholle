@@ -1,0 +1,17 @@
+<% unless @prodss %>
+  <div class = "container">
+  <h1>
+        <span>Leider gibt es kein Ergebnis für deine Suche</span><br/><br/>
+        </h1></div>
+<% else %>
+<div class="container">
+
+<div class="proline"><hr /></div>
+
+ <div class="entry"> 
+ <%= link_to image_tag(@prodss.image_url), @prodss %>
+  <h3><%= link_to @prodss.title, @prodss %></h3>
+  </div>
+  </div>
+  
+  <% end %>

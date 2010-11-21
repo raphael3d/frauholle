@@ -1,0 +1,28 @@
+<header>
+  <a href="/"><img src="/images/logo.png" />
+  
+  <div id="searchwrapper2">
+  <form method="get" id="searchform2" action="/search">
+  <fieldset class="search2">
+  	<input type="text" name="query" placeholder="Produkt suchen" class="box" />
+  	<button class="btn" title="Submit Search">Search</button>
+  </fieldset>
+  </form>
+  </div>
+  
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Produkte", store_path %></li>
+      <li><%= link_to "Aktuelles", aktuell_path %></li>
+      <li><%= link_to "Wir über uns", about_path %></li>
+      <li><%= link_to "Kontakt",'contacts/new'%></li>
+      
+      
+     
+    </ul>
+  </nav>
+  
+  
+</header>
+
+

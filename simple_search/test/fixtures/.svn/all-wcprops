@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/tools/!svn/ver/324/rails_plugins/simple_search/test/fixtures
+END
+page_1_repr_deep.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tools/!svn/ver/324/rails_plugins/simple_search/test/fixtures/page_1_repr_deep.txt
+END
+pages.yml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/tools/!svn/ver/268/rails_plugins/simple_search/test/fixtures/pages.yml
+END
+page_author.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tools/!svn/ver/38/rails_plugins/simple_search/test/fixtures/page_author.rb
+END
+page_authors.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/tools/!svn/ver/38/rails_plugins/simple_search/test/fixtures/page_authors.yml
+END
+page_para.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tools/!svn/ver/9/rails_plugins/simple_search/test/fixtures/page_para.rb
+END
+page_paras.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tools/!svn/ver/41/rails_plugins/simple_search/test/fixtures/page_paras.yml
+END
+page_para_1_repr.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tools/!svn/ver/267/rails_plugins/simple_search/test/fixtures/page_para_1_repr.txt
+END
+page.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/tools/!svn/ver/268/rails_plugins/simple_search/test/fixtures/page.rb
+END

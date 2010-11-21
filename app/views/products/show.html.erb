@@ -1,0 +1,31 @@
+
+
+<div class = "container">
+ <% flash.each do |key, value| %>
+    <div class="noticeUpdate <%= key %>"> 	<img src="/images/smiley1.png" /><%= value %></div>
+  <% end %>
+  
+<%= include_fancy_box %>
+
+<h1><%= @product.title %></h1>
+
+<div class="hr"><hr /></div>
+
+<div class= "right-product">
+
+
+
+<p>
+  <h3>Beschreibung:</h3><br>
+  <%= @product.description %>
+</p>
+
+<div class="hr"><hr /></div>
+
+</div>
+
+<div class = "product">    
+     <%= image_tag(@product.image_url) %>
+</div>
+
+</div>

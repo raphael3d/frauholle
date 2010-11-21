@@ -1,0 +1,877 @@
+Last login: Thu Oct 21 13:03:55 on ttys002
+findarin:~ ikarus$ cd work
+findarin:work ikarus$ rails new frauholle
+      create  
+      create  README
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/mailers
+      create  app/models
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/secret_token.rb
+      create  config/initializers/session_store.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  doc
+      create  doc/README_FOR_APP
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.gitkeep
+      create  log
+      create  log/server.log
+      create  log/production.log
+      create  log/development.log
+      create  log/test.log
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/index.html
+      create  public/robots.txt
+      create  public/images
+      create  public/images/rails.png
+      create  public/stylesheets
+      create  public/stylesheets/.gitkeep
+      create  public/javascripts
+      create  public/javascripts/application.js
+      create  public/javascripts/controls.js
+      create  public/javascripts/dragdrop.js
+      create  public/javascripts/effects.js
+      create  public/javascripts/prototype.js
+      create  public/javascripts/rails.js
+      create  script
+      create  script/rails
+      create  test
+      create  test/performance/browsing_test.rb
+      create  test/test_helper.rb
+      create  test/fixtures
+      create  test/functional
+      create  test/integration
+      create  test/unit
+      create  tmp
+      create  tmp/sessions
+      create  tmp/sockets
+      create  tmp/cache
+      create  tmp/pids
+      create  vendor/plugins
+      create  vendor/plugins/.gitkeep
+findarin:work ikarus$ rails generate controller Pages home contact
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--skip-gemfile]        # Don't create a Gemfile
+  -d, [--database=DATABASE]   # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db)
+                              # Default: sqlite3
+  -O, [--skip-active-record]  # Skip Active Record files
+  -J, [--skip-prototype]      # Skip Prototype files
+  -T, [--skip-test-unit]      # Skip Test::Unit files
+      [--dev]                 # Setup the application with Gemfile pointing to your Rails checkout
+  -G, [--skip-git]            # Skip Git ignores and keeps
+  -b, [--builder=BUILDER]     # Path to an application builder (can be a filesystem path or URL)
+  -r, [--ruby=PATH]           # Path to the Ruby binary of your choice
+                              # Default: /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+  -m, [--template=TEMPLATE]   # Path to an application template (can be a filesystem path or URL)
+      [--edge]                # Setup the application with Gemfile pointing to Rails repository
+
+Runtime options:
+  -q, [--quiet]    # Supress status output
+  -s, [--skip]     # Skip files that already exist
+  -f, [--force]    # Overwrite files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+
+Rails options:
+  -h, [--help]     # Show this help message and quit
+  -v, [--version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+findarin:work ikarus$ cd frauholle
+findarin:frauholle ikarus$ rails generate controller Pages home contact
+      create  app/controllers/pages_controller.rb
+       route  get "pages/contact"
+       route  get "pages/home"
+      invoke  erb
+      create    app/views/pages
+      create    app/views/pages/home.html.erb
+      create    app/views/pages/contact.html.erb
+      invoke  test_unit
+      create    test/functional/pages_controller_test.rb
+      invoke  helper
+      create    app/helpers/pages_helper.rb
+      invoke    test_unit
+      create      test/unit/helpers/pages_helper_test.rb
+findarin:frauholle ikarus$ rm public/index.html
+findarin:frauholle ikarus$ rails generate controller Users new
+      create  app/controllers/users_controller.rb
+       route  get "users/new"
+      invoke  erb
+      create    app/views/users
+      create    app/views/users/new.html.erb
+      invoke  test_unit
+      create    test/functional/users_controller_test.rb
+      invoke  helper
+      create    app/helpers/users_helper.rb
+      invoke    test_unit
+      create      test/unit/helpers/users_helper_test.rb
+findarin:frauholle ikarus$ rails generate model User name:string email:string
+      invoke  active_record
+      create    db/migrate/20101021142435_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/unit/user_test.rb
+      create      test/fixtures/users.yml
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  CreateUsers: migrating ====================================================
+-- create_table(:users)
+   -> 0.0026s
+==  CreateUsers: migrated (0.0028s) ===========================================
+
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Installing rspec-core (2.0.1) 
+Installing rspec-expectations (2.0.1) 
+Installing rspec-mocks (2.0.1) 
+Installing rspec (2.0.1) 
+Installing rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ annotate
+-bash: annotate: command not found
+findarin:frauholle ikarus$ rake db:test:prepare
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rails generate migration add_email_uniqueness_index
+      invoke  active_record
+      create    db/migrate/20101021143145_add_email_uniqueness_index.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  AddEmailUniquenessIndex: migrating ========================================
+==  AddEmailUniquenessIndex: migrated (0.0000s) ===============================
+
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rails generate migration add_password_to_users encrypted_password:string
+      invoke  active_record
+      create    db/migrate/20101021143821_add_password_to_users.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  AddPasswordToUsers: migrating =============================================
+-- add_column(:users, :encrypted_password, :string)
+   -> 0.0010s
+==  AddPasswordToUsers: migrated (0.0011s) ====================================
+
+findarin:frauholle ikarus$ rake db:test:prepare
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rails generate migration add_salt_to_users salt:string
+      invoke  active_record
+      create    db/migrate/20101021144406_add_salt_to_users.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  AddSaltToUsers: migrating =================================================
+-- add_column(:users, :salt, :string)
+   -> 0.0013s
+==  AddSaltToUsers: migrated (0.0014s) ========================================
+
+findarin:frauholle ikarus$ rake db:test:prepare
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:reset
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("users", {:force=>true})
+   -> 0.0070s
+-- initialize_schema_migrations_table()
+   -> 0.0059s
+-- assume_migrated_upto_version(20101021144406, "db/migrate")
+   -> 0.0083s
+findarin:frauholle ikarus$ rake db:reset
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("users", {:force=>true})
+   -> 0.0068s
+-- initialize_schema_migrations_table()
+   -> 0.0059s
+-- assume_migrated_upto_version(20101021144406, "db/migrate")
+   -> 0.0092s
+findarin:frauholle ikarus$ rails generate controller Sessions new
+      create  app/controllers/sessions_controller.rb
+       route  get "sessions/new"
+      invoke  erb
+      create    app/views/sessions
+      create    app/views/sessions/new.html.erb
+      invoke  rspec
+      create    spec/controllers/sessions_controller_spec.rb
+      create    spec/views/sessions
+      create    spec/views/sessions/new.html.erb_spec.rb
+      invoke  helper
+      create    app/helpers/sessions_helper.rb
+      invoke    rspec
+      create      spec/helpers/sessions_helper_spec.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:reset
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("users", {:force=>true})
+   -> 0.0065s
+-- initialize_schema_migrations_table()
+   -> 0.0065s
+-- assume_migrated_upto_version(20101021144406, "db/migrate")
+   -> 0.0099s
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("users", {:force=>true})
+   -> 0.0134s
+-- initialize_schema_migrations_table()
+   -> 0.0067s
+-- assume_migrated_upto_version(20101021144406, "db/migrate")
+   -> 0.0096s
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ bundle show will_paginate
+/Library/Ruby/Gems/1.8/gems/will_paginate-3.0.pre2
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Installing paginate (0.1.3) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ bundle show paginate
+/Library/Ruby/Gems/1.8/gems/paginate-0.1.3
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using paginate (0.1.3) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Could not find gem 'classic_pagination (>= 0, runtime)' in any of the gem sources.
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.0) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.0) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.0) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.0) 
+Using arel (1.0.1) 
+Using activerecord (3.0.0) 
+Using activeresource (3.0.0) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Installing pagination (0.3.3) 
+Using thor (0.14.3) 
+Using railties (3.0.0) 
+Using rails (3.0.0) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ rails plugin install svn://errtheblog.com/svn/plugins/will_paginate
+svn: Can't connect to host 'errtheblog.com': Operation timed out
+findarin:frauholle ikarus$ bundle install
+You cannot specify the same gem twice with different version requirements. You specified: sqlite3-ruby (= 1.2.5) and sqlite3-ruby (>= 0)
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Installing activesupport (3.0.1) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Installing activemodel (3.0.1) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Installing actionpack (3.0.1) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Installing actionmailer (3.0.1) 
+Using arel (1.0.1) 
+Installing activerecord (3.0.1) 
+Installing activeresource (3.0.1) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using gravatar_image_tag (0.1.0) 
+Using thor (0.14.3) 
+Installing railties (3.0.1) 
+Installing rails (3.0.1) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.1) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.1) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.1) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.1) 
+Using arel (1.0.1) 
+Using activerecord (3.0.1) 
+Using activeresource (3.0.1) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using gravatar_image_tag (0.1.0) 
+Using thor (0.14.3) 
+Using railties (3.0.1) 
+Using rails (3.0.1) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ gem install will_paginate
+Successfully installed will_paginate-2.3.15
+1 gem installed
+Installing ri documentation for will_paginate-2.3.15...
+Installing RDoc documentation for will_paginate-2.3.15...
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.1) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.1) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.1) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.1) 
+Using arel (1.0.1) 
+Using activerecord (3.0.1) 
+Using activeresource (3.0.1) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using gravatar_image_tag (0.1.0) 
+Using thor (0.14.3) 
+Using railties (3.0.1) 
+Using rails (3.0.1) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ gem install will_paginate
+Successfully installed will_paginate-2.3.15
+1 gem installed
+Installing ri documentation for will_paginate-2.3.15...
+Installing RDoc documentation for will_paginate-2.3.15...
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.1) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.1) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.1) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.1) 
+Using arel (1.0.1) 
+Using activerecord (3.0.1) 
+Using activeresource (3.0.1) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using gravatar_image_tag (0.1.0) 
+Using thor (0.14.3) 
+Using railties (3.0.1) 
+Using rails (3.0.1) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (2.3.15) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Could not find gem 'will_paginate3.0 (>= 0, runtime)' in any of the gem sources.
+findarin:frauholle ikarus$ bundle install
+Fetching source index for http://rubygems.org/
+Could not find gem 'will_paginate3.0.pre2 (>= 0, runtime)' in any of the gem sources.
+findarin:frauholle ikarus$ bundle install
+Using rake (0.8.7) 
+Using abstract (1.0.0) 
+Using activesupport (3.0.1) 
+Using builder (2.1.2) 
+Using i18n (0.4.1) 
+Using activemodel (3.0.1) 
+Using erubis (2.6.6) 
+Using rack (1.2.1) 
+Using rack-mount (0.6.13) 
+Using rack-test (0.5.6) 
+Using tzinfo (0.3.23) 
+Using actionpack (3.0.1) 
+Using mime-types (1.16) 
+Using polyglot (0.3.1) 
+Using treetop (1.4.8) 
+Using mail (2.2.7) 
+Using actionmailer (3.0.1) 
+Using arel (1.0.1) 
+Using activerecord (3.0.1) 
+Using activeresource (3.0.1) 
+Using annotate-models (1.0.4) 
+Using bundler (1.0.2) 
+Using diff-lcs (1.1.2) 
+Using faker (0.3.1) 
+Using gravatar_image_tag (0.1.0) 
+Using thor (0.14.3) 
+Using railties (3.0.1) 
+Using rails (3.0.1) 
+Using rspec-core (2.0.1) 
+Using rspec-expectations (2.0.1) 
+Using rspec-mocks (2.0.1) 
+Using rspec (2.0.1) 
+Using rspec-rails (2.0.1) 
+Using sqlite3-ruby (1.2.4) 
+Using will_paginate (3.0.pre2) 
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+findarin:frauholle ikarus$ rails generate model Micropost content:string user_id:integer
+      invoke  active_record
+      create    db/migrate/20101022074103_create_microposts.rb
+      create    app/models/micropost.rb
+      invoke    rspec
+      create      spec/models/micropost_spec.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  CreateMicroposts: migrating ===============================================
+-- create_table(:microposts)
+   -> 0.0021s
+==  CreateMicroposts: migrated (0.0023s) ======================================
+
+findarin:frauholle ikarus$ rake db:test:prepare
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+rake aborted!
+/Users/ikarus/work/frauholle/lib/tasks/sample_data.rake:26: syntax error, unexpected $end, expecting kEND
+                   end
+                      ^
+/Users/ikarus/work/frauholle/Rakefile:7
+(See full trace by running task with --trace)
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("microposts", {:force=>true})
+   -> 0.0046s
+-- create_table("users", {:force=>true})
+   -> 0.0034s
+-- initialize_schema_migrations_table()
+   -> 0.0054s
+-- assume_migrated_upto_version(20101022074103, "db/migrate")
+   -> 0.0121s
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+rake aborted!
+/Users/ikarus/work/frauholle/lib/tasks/sample_data.rake:28: syntax error, unexpected $end, expecting kEND
+                 
+                 ^
+/Users/ikarus/work/frauholle/Rakefile:7
+(See full trace by running task with --trace)
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+db/test.sqlite3 already exists
+-- create_table("microposts", {:force=>true})
+   -> 0.0179s
+-- create_table("users", {:force=>true})
+   -> 0.0046s
+-- initialize_schema_migrations_table()
+   -> 0.0058s
+-- assume_migrated_upto_version(20101022074103, "db/migrate")
+   -> 0.0125s
+findarin:frauholle ikarus$ rake db:populate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+findarin:frauholle ikarus$ cd ..
+findarin:work ikarus$ cd depot
+findarin:depot ikarus$ cd ..
+findarin:work ikarus$ clear
+findarin:frauholle ikarus$ rails generate scaffold product title:string description:text image_url:string
+      invoke  active_record
+      create    db/migrate/20101022093244_create_products.rb
+      create    app/models/product.rb
+      invoke    rspec
+      create      spec/models/product_spec.rb
+       route  resources :products
+      invoke  scaffold_controller
+      create    app/controllers/products_controller.rb
+      invoke    erb
+      create      app/views/products
+      create      app/views/products/index.html.erb
+      create      app/views/products/edit.html.erb
+      create      app/views/products/show.html.erb
+      create      app/views/products/new.html.erb
+      create      app/views/products/_form.html.erb
+      invoke    rspec
+      create      spec/controllers/products_controller_spec.rb
+      create      spec/views/products/edit.html.erb_spec.rb
+      create      spec/views/products/index.html.erb_spec.rb
+      create      spec/views/products/new.html.erb_spec.rb
+      create      spec/views/products/show.html.erb_spec.rb
+      invoke      helper
+      create        spec/helpers/products_helper_spec.rb
+      create      spec/routing/products_routing_spec.rb
+      invoke      rspec
+      create        spec/requests/products_spec.rb
+      invoke    helper
+      create      app/helpers/products_helper.rb
+      invoke      rspec
+      invoke  stylesheets
+      create    public/stylesheets/scaffold.css
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  CreateProducts: migrating =================================================
+-- create_table(:products)
+   -> 0.0016s
+==  CreateProducts: migrated (0.0017s) ========================================
+
+findarin:frauholle ikarus$ rails generate migration add_test_data
+      invoke  active_record
+      create    db/migrate/20101022093738_add_test_data.rb
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  AddTestData: migrating ====================================================
+rake aborted!
+An error has occurred, this and all later migrations canceled:
+
+unknown attribute: price
+
+(See full trace by running task with --trace)
+findarin:frauholle ikarus$ rake db:migrate
+(in /Users/ikarus/work/frauholle)
+==  AddTestData: migrating ====================================================
+==  AddTestData: migrated (0.0268s) ===========================================
+
+findarin:frauholle ikarus$ rails generate controller store index
+      create  app/controllers/store_controller.rb
+       route  get "store/index"
+      invoke  erb
+      create    app/views/store
+      create    app/views/store/index.html.erb
+      invoke  rspec
+      create    spec/controllers/store_controller_spec.rb
+      create    spec/views/store
+      create    spec/views/store/index.html.erb_spec.rb
+      invoke  helper
+      create    app/helpers/store_helper.rb
+      invoke    rspec
+      create      spec/helpers/store_helper_spec.rb
+findarin:frauholle ikarus$ cd ..
+findarin:work ikarus$ 
+
+
+--------------------------------------
+
+
+
+
+
+
+
+
+
+
+def search
+   if params[:query]
+     @prodss = Product.search(params[:query])
+   else
+     @prodss = []
+   end
+ end

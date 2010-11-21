@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <b>titel:</b>
+  <%= @liste.title %>
+</p>
+
+<p>
+  <b>beschreibung:</b>
+  <%= @liste.description %>
+</p>
+
+
+
+<p>
+  <b>Bild:</b>
+  <%= @liste.image_url %>
+</p>
+
+
+<%= link_to 'bearbeiten', edit_liste_path(@liste) %> |
+<%= link_to 'zurück', listes_path %>

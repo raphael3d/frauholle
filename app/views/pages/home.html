@@ -1,0 +1,58 @@
+
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js"></script>
+
+<!--  initialize the slideshow when the DOM is ready -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshow').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+
+  <div class = "leftbar">
+<h3><b>F</b>rauholle ist ein <b>N</b>aturladen<br>mit einer großen Auswahl<br>an <b>biologischen</b> Produkten.</h3>
+
+<div class = "note"><%= link_to "Auf der Karte", '/contacts/new' %> </div>
+  </div>
+
+  <div class = "rightbar">
+  
+		<div class="slideshow">
+			<img src="images/start4.png" />
+			
+			<img src="images/start1.png" />
+			<img src="images/start3.png" />
+			
+			<img src="images/start2.png" />
+		
+		</div>	
+	
+	
+	
+	</div>
+  <div class = "bar">
+  
+  <div id="searchwrapper">
+  <form method="get" id="searchform" action="/search">
+  <fieldset class="search">
+  	<input type="text" name="query" placeholder="Produkt suchen z.B. Tee" class="box" />
+  	<button class="btn" title="Submit Search">Search</button>
+  </fieldset>
+  </form>
+  </div>
+  
+  <h2><b><%= Product.count %> Produkte</b> und mehr</h2>
+  
+  </div>
+ 
+
+<div class = "container">
+<div class ="space"></div>	
+	<%= render @prods %>
+</div>
+ 

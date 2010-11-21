@@ -1,0 +1,34 @@
+<%= javascript_include_tag :defaults %>
+
+<div id="product-list">
+  <h1>Produkte aufgelistet</h1>
+
+  <table>
+  <% @products.each do |product| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+
+      <td>
+      <div class = "entry">
+        <%= image_tag product.image_url, :class => 'list-image' %>
+        </div>
+      </td>
+
+      
+
+      <td class="list-actions">
+        <%= link_to 'Zeigen', product %><br/>
+        <%= link_to 'Bearbeiten', edit_product_path(product) %><br/>
+        <%= link_to "Löschen", product, :confirm => "Sicher?", :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<br />
+
+<h3><%= link_to 'Neues Produkt', new_product_path %></h3>
+
+
+
+

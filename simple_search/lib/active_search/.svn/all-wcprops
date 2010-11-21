@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/tools/!svn/ver/930/rails_plugins/simple_search/lib/active_search
+END
+indexer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/lib/active_search/indexer.rb
+END
+result.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tools/!svn/ver/930/rails_plugins/simple_search/lib/active_search/result.rb
+END
+like_indexer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tools/!svn/ver/315/rails_plugins/simple_search/lib/active_search/like_indexer.rb
+END
+ferret_indexer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tools/!svn/ver/774/rails_plugins/simple_search/lib/active_search/ferret_indexer.rb
+END
+term_indexer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/lib/active_search/term_indexer.rb
+END

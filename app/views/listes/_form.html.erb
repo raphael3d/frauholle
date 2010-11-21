@@ -1,0 +1,71 @@
+<%= form_for(@liste) do |f| %>
+  <% if @liste.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@liste.errors.count, "error") %> prohibited this liste from being saved:</h2>
+
+      <ul>
+      <% @liste.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+  <h3>  <%= f.label :uberschrift %><br /></h3>
+     <%= f.text_field :heading %>
+   </div>
+
+  <div class="field">
+    <%= f.label :Montag %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :Inhalt %><br />
+    <%= f.text_area :description %>
+  </div>
+  
+  <div class="field">
+     <%= f.label :dienstag %><br />
+     <%= f.text_field :dienstag %>
+   </div>
+   <div class="field">
+     <%= f.label :Inhalt %><br />
+     <%= f.text_area :dienstag2 %>
+   </div>
+  
+   <div class="field">
+      <%= f.label :mittwoch %><br />
+      <%= f.text_field :mittwoch %>
+    </div>
+    <div class="field">
+      <%= f.label :Inhalt %><br />
+      <%= f.text_area :mittwoch2 %>
+    </div>
+    
+     <div class="field">
+        <%= f.label :donnerstag %><br />
+        <%= f.text_field :donnerstag %>
+      </div>
+      <div class="field">
+        <%= f.label :Inhalt %><br />
+        <%= f.text_area :donnerstag2 %>
+      </div>
+ 
+         <div class="field">
+            <%= f.label :freitag %><br />
+            <%= f.text_field :freitag %>
+          </div>
+          <div class="field">
+            <%= f.label :Inhalt %><br />
+            <%= f.text_area :freitag2 %>
+          </div>
+  
+  <div class="field">
+    <%= f.label :Bild %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Fertig %>
+  </div>
+<% end %>

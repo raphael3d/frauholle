@@ -1,0 +1,43 @@
+<div class = "container">
+<h1>Speiseplan & Co</h1>
+
+<div class="hr"><hr /></div>
+
+<% @listes.each do |liste| -%>
+  <% if liste.image_url.empty? %>
+  
+  <% else %>
+  <h3><%=h liste.heading %></h3>
+  
+    <div class = "product">    
+    
+    <%= image_tag(liste.image_url) %>
+    </div>
+    
+  <% end %>
+    <div class = "right-product3">
+    
+    <div class = "leftt">
+    
+    <h3><%=h liste.title %></h3>
+  <p>  <%= liste.description %></p>
+    
+    <h3><%=h liste.dienstag %></h3>
+ <p>   <%= liste.dienstag2 %></p>
+      
+    <h3><%=h liste.mittwoch %></h3>
+ <p>   <%= liste.mittwoch2 %></p>
+        
+    </div>
+    <div class = "rightt">    
+    <h3><%=h liste.donnerstag %></h3>
+<p>    <%= liste.donnerstag2 %></p>
+          
+    <h3><%=h liste.freitag %></h3>
+ <p>   <%= liste.freitag2 %></p>
+          </div>
+   </div>
+   <div class="hr"><hr /></div>
+   
+<% end %>
+</div>

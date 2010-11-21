@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test
+END
+test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/test_helper.rb
+END
+active_search_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/active_search_test.rb
+END
+schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tools/!svn/ver/322/rails_plugins/simple_search/test/schema.rb
+END
+like_indexer_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/like_indexer_test.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/tools/!svn/ver/266/rails_plugins/simple_search/test/database.yml
+END
+ferret_indexer_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/ferret_indexer_test.rb
+END
+term_indexer_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/term_indexer_test.rb
+END
+base_indexer_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/base_indexer_test.rb
+END
+002_add_join.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/tools/!svn/ver/322/rails_plugins/simple_search/test/002_add_join.rb
+END
+index_representations_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/index_representations_test.rb
+END
+fixturized_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/tools/!svn/ver/709/rails_plugins/simple_search/test/fixturized_test.rb
+END

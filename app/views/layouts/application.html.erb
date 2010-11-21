@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+   
+    <link rel="stylesheet" href="stylesheets/grid.css" type="text/css"> 
+    <link rel="stylesheet" href="stylesheets/html5.css" type="text/css" />   
+    <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />  
+
+    <!--[if IE]>  
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->  
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+    <script type='text/javascript' src='javascripts/fancyzoom.js'></script>
+    <script type='text/javascript' src='javascripts/demo.js'></script>
+    
+    
+  </head>
+  <body>
+  
+    <div class="container">
+    
+    <%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+      <div class="noticeUpdate <%= key %>"> 	<img src="/images/smiley1.png" /><%= value %></div>
+    <% end %>
+            <section class="round">
+            
+              <%= yield %>
+            </section>
+            <%= render 'layouts/footer' %>
+            
+    </div>
+  </body>
+</html>

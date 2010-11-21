@@ -1,0 +1,42 @@
+<%= javascript_include_tag :defaults %>
+<div id="product-list">
+  <h1>Aktuelles bearbeiten</h1>
+
+  <table>
+  <% @listes.each do |liste| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+      <td>
+      <div class = "entry">
+      
+        <%= image_tag liste.image_url, :class => 'list-image' %>
+        </div>
+        
+     
+      </td>
+      <td class="list-description">
+        <dl>
+          <dt><%=h liste.title %></dt>
+          <dd><%=h truncate(liste.description.gsub(/<.*?>/,''),
+                 :length => 80) %></dd>
+        </dl>
+         <dl>
+            <dt><%=h liste.dienstag %></dt>
+            <dd><%=h truncate(liste.dienstag2) %></dd>
+          </dl>
+        
+      </td>
+
+      <td class="list-actions">
+        <%= link_to 'Zeigen', liste %><br/>
+        <%= link_to 'Bearbeiten', edit_liste_path(liste) %><br/>
+        <%= link_to "Löschen", liste, :confirm => "Sicher?", :method => :delete %>
+       
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<br />
+
+<h3><%= link_to 'Neuer Eintrag', new_liste_path %><h3>
